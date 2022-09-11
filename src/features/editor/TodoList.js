@@ -2,19 +2,27 @@ import { nanoid } from '@reduxjs/toolkit';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addData } from "./todoSlice";
+import { addData,deleteData } from "./todoSlice";
 
-const TodoList = ({ id, item }) => {
+const TodoList = () => {
     const dispatch = useDispatch();
-    const [listItem, setListItem] = useState("")
+    const [item, setListItem] = useState("")
     const todos = useSelector(state => state.todos);
 
+    const removeItem = ()=>{
+        dispatch(deleteData({
+            id: nanoid()
+        }))
+    }
+
+
     const renderList = todos.map((todo, index) => {
-        return <li className='listitem' key={todo.id}>{todo.item}</li>;
+        return <li className='listitem' key={todo.id}>{todo.item} <button onClick={removeItem}>-</button></li>;
     })
 
     const saveonClick = () => {
-        if (id && item) {
+        
+        if ( item) {
             dispatch(addData({
                 id: nanoid(),
                 item
@@ -32,7 +40,7 @@ const TodoList = ({ id, item }) => {
             <div className='centerdiv'>
                 <h1>to do list app</h1>
                 <div className='addlist'>
-                    <input type="text" placeholder="add to do" value={listItem} onChange={(e) => setListItem(e.target.value)} />
+                    <input type="text" placeholder="add to do" value={item} onChange={(e) => setListItem(e.target.value)} />
                     <button onClick={saveonClick}>+</button>
                 </div>
                 <ol>
