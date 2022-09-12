@@ -17,14 +17,13 @@ const todoSlice = createSlice({
       });
     },
     deleteData(state, action) {
-      const delte = state.filter(({id})=> {
-        // >id === action.payload.id
-       
-console.log(action.payload.id, id);
-
-      });
-console.log(delte)
-    },
+      return  state.filter((item)=> {
+             return item.id !== action.payload.id
+       });
+     },
+     updateData(state, action){
+      return state.filter
+     }
     
   }
 })

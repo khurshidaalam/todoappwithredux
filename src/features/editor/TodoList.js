@@ -9,16 +9,13 @@ const TodoList = () => {
     const [item, setListItem] = useState("")
     const todos = useSelector(state => state.todos);
 
-    const removeItem = ()=>{
-        dispatch(deleteData({
-            id: nanoid()
-        }))
-    }
-
+    
 
     const renderList = todos.map((todo, index) => {
-        return <li className='listitem' key={todo.id}>{todo.item} <button onClick={removeItem}>-</button></li>;
-    })
+        return <li className='listitem' key={todo.id}>{todo.item}
+        <button >/</button> 
+        <button onClick={()=>dispatch(deleteData({id:todo.id}))}>-</button></li>;
+    }) 
 
     const saveonClick = () => {
         
