@@ -22,10 +22,13 @@ const todoSlice = createSlice({
        });
      },
      updateData(state, action){
-      return state.filter
+      const objIndx = state.findIndex((item)=>{
+        return item.id == 1;
+      })
+      return state[objIndx].item = action.payload.item;
      }
     
   }
 })
-export const { addData,deleteData } = todoSlice.actions;
+export const { addData,deleteData,updateData } = todoSlice.actions;
 export default todoSlice.reducer;
