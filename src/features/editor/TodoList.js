@@ -30,9 +30,7 @@ const TodoList = () => {
             setListItem((prev) => prev);
             console.log(renderList);
         }
-
     }
-
 
 
     return (

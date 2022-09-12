@@ -16,16 +16,16 @@ const todoSlice = createSlice({
         item: action.payload.item
       });
     },
-    // deleteData(state, action) {
-    //   // [state.splice(0, action.payload),
-    //   // ...state.splice(1)]
+    deleteData(state, action) {
+      const delte = state.filter(({id})=> {
+        // >id === action.payload.id
+       
+console.log(action.payload.id, id);
 
-    //   state.splice({id: action.payload.id,id: action.payload.id})
-    // //   (method) Array<WritableDraft<{ id: string; item: string; }>>.splice(start: number, deleteCount?: number | undefined): WritableDraft<{
-    // //     id: string;
-    // //     item: string;
-    // // }>[] (+1 overload)
-    // }
+      });
+console.log(delte)
+    },
+    
   }
 })
 export const { addData,deleteData } = todoSlice.actions;
