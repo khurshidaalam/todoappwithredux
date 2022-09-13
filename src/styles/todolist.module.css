@@ -1,0 +1,32 @@
+.maindiv{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d7d7d745;
+}
+.centerdiv{
+    padding: 20px;
+}
+.centerdiv h1{
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #033b72;
+    padding-bottom: 15px;
+    font-size: 28px;
+    border-bottom: 1px solid #16385a38;
+}
+.addlist{
+    display: flex;
+    column-gap: 10px;
+}
+.addlist input{
+    padding: 10px;
+    border: 1px solid rgba(172, 172, 172, 0.884);
+    border-radius: 5px;
+}
+.addlist input:focus{
+    outline: none;
+    border-color: rgba(66, 63, 236, 0.685);
+}

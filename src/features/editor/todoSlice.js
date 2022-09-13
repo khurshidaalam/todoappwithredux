@@ -21,13 +21,13 @@ const todoSlice = createSlice({
              return item.id !== action.payload.id
        });
      },
+
      updateData(state, action){
-      const objIndx = state.findIndex((item)=>{
-        return item.id == 1;
-      })
-      return state[objIndx].item = action.payload.item;
+      state.find((item)=> {return (item.id === action.payload.id, item.item === action.payload.item)})
+      
+      
      }
-    
+     
   }
 })
 export const { addData,deleteData,updateData } = todoSlice.actions;
